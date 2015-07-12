@@ -4001,20 +4001,20 @@ inline void gcode_M120() { enable_endstops(true); }
  */
 inline void gcode_M121() { enable_endstops(false); }
 
-#ifdef BLINKM
+#if defined(BLINKM) || defined(HAS_RGB_BACKLIGHT)
 
   /**
    * M150: Set Status LED Color - Use R-U-B for R-G-B
    */
   inline void gcode_M150() {
-    SendColors(
-      code_seen('R') ? (byte)code_value_short() : 0,
-      code_seen('U') ? (byte)code_value_short() : 0,
-      code_seen('B') ? (byte)code_value_short() : 0
-    );
+      SendColors(
+        code_seen('R') ? (byte)code_value_short() : 0,
+        code_seen('U') ? (byte)code_value_short() : 0,
+        code_seen('B') ? (byte)code_value_short() : 0
+      );
   }
 
-#endif // BLINKM
+#endif // BLINKM || HAS_RGB_BACKLIGHT
 
 /**
  * M200: Set filament diameter and set E axis units to cubic millimeters
