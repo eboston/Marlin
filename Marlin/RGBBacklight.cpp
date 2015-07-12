@@ -20,6 +20,4 @@ void SendColors(byte red, byte grn, byte blu) {
 
   #endif // ELB_FULL_GRAPHIC_CONTROLLER
  
- 
-  
 #endif  // HAS_RGB_BACKLIGHT
