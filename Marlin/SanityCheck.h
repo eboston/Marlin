@@ -300,5 +300,20 @@
   #if !defined(THERMAL_PROTECTION_BED) && defined(THERMAL_PROTECTION_BED_PERIOD)
     #error Thermal Runaway Protection for the bed must now be enabled with THERMAL_PROTECTION_BED.
   #endif
+  
+  /**
+   * Check for RGB back light
+   */
+  #if defined(HAS_RGB_BACKLIGHT)
+    #if defined(ELB_FULL_GRAPHIC_CONTROLLER)
+      #if !defined(RGB_BACKLIGHT_RED_PIN) || !defined(RGB_BACKLIGHT_GREEN_PIN) || !defined(RGB_BACKLIGHT_BLUE_PIN)
+        #error HAS_RGB_BACKLIGHT requires RGB_BACKLIGHT_RED_PIN, RGB_BACKLIGHT_GREEN_PIN, and RGB_BACKLIGHT_BLUE_PIN be defined.
+      #endif
+    #else
+      #error HAS_RGB_BACKLIGHT is not supported on the selected board.
+    #endif
+  #endif
+
+   
 
 #endif //SANITYCHECK_H

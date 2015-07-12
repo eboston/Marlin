@@ -670,7 +670,7 @@ const bool Z_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the logic
 // This is a new controller currently under development.  https://github.com/eboston/Adafruit-ST7565-Full-Graphic-Controller/
 //
 // ==> REMEMBER TO INSTALL U8glib to your ARDUINO library folder: http://code.google.com/p/u8glib/wiki/u8glib
-//#define ELB_FULL_GRAPHIC_CONTROLLER
+#define ELB_FULL_GRAPHIC_CONTROLLER
 //#define SDCARDDETECTINVERTED
 
 // The RepRapDiscount Smart Controller (white PCB)
@@ -714,7 +714,7 @@ const bool Z_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the logic
 
 // Panucatt VIKI LCD with status LEDs, integrated click & L/R/U/P buttons, separate encoder inputs
 //#define LCD_I2C_VIKI
-  
+
 // SSD1306 OLED generic display support
 // ==> REMEMBER TO INSTALL U8glib to your ARDUINO library folder: http://code.google.com/p/u8glib/wiki/u8glib
 //#define U8GLIB_SSD1306
@@ -814,8 +814,9 @@ const bool Z_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the logic
 
 
 
-
 #include "Configuration_adv.h"
 #include "thermistortables.h"
+
+#include "RGBBacklight.h"
 
 #endif //CONFIGURATION_H
